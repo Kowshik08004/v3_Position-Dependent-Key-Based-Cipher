@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Simple client-side position-dependent text encryptor and decryptor."
+    >
+
+    <title>Simple Text Encryptor</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+
+        <!-- ==========================================
+             Header
+        =========================================== -->
+
+        <header class="header">
+
+            <div class="badge">
+                VERSION 3
+            </div>
+
+            <h1>
+                Simple Text Encryptor
+            </h1>
+
+            <p>
+                A lightweight key-based position-dependent
+                text encryptor and decryptor.
+            </p>
+
+        </header>
+
+
+
+        <!-- ==========================================
+             Main Application
+        =========================================== -->
+
+        <section class="app-card">
+
+
+            <!-- ==========================================
+                 Input Text
+            =========================================== -->
+
+            <div class="section">
+
+                <div class="section-header">
+
+                    <label for="textInput">
+                        Input Text
+                    </label>
+
+                    <span id="inputCount">
+                        0 characters
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="textInput"
+                    placeholder="Enter your text here..."
+                    spellcheck="false"
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 Encryption Key
+            =========================================== -->
+
+            <div class="key-row">
+
+
+                <div class="key-control">
+
+                    <label for="keyInput">
+                        Encryption Key
+                    </label>
+
+
+                    <div class="key-input-wrapper">
+
+                        <input
+                            type="password"
+                            id="keyInput"
+                            placeholder="Enter your key..."
+                            autocomplete="off"
+                        >
+
+
+                        <button
+                            type="button"
+                            id="toggleKeyBtn"
+                            class="toggle-key"
+                            aria-label="Show encryption key"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="key-help">
+
+                    <strong>
+                        How it works
+                    </strong>
+
+                    <span>
+                        Your key generates a deterministic
+                        position-dependent key stream.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 Version Information
+            =========================================== -->
+
+            <div class="version-info">
+
+                <span>
+                    Cipher Version: 3
+                </span>
+
+                <span>
+                    Position-dependent transformation
+                </span>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 Buttons
+            =========================================== -->
+
+            <div class="button-group">
+
+                <button
+                    id="encryptBtn"
+                    class="button primary"
+                >
+                    Encrypt
+                </button>
+
+
+                <button
+                    id="decryptBtn"
+                    class="button secondary"
+                >
+                    Decrypt
+                </button>
+
+
+                <button
+                    id="clearBtn"
+                    class="button secondary"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 Result
+            =========================================== -->
+
+            <div class="section result-section">
+
+                <div class="section-header">
+
+                    <label for="result">
+                        Result
+                    </label>
+
+                    <span id="resultCount">
+                        0 characters
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="result"
+                    placeholder="Your result will appear here..."
+                    readonly
+                    spellcheck="false"
+                ></textarea>
+
+
+                <button
+                    id="copyBtn"
+                    class="copy-button"
+                >
+                    Copy Result
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             Information
+        =========================================== -->
+
+        <section class="info-card">
+
+            <h2>
+                About this cipher
+            </h2>
+
+
+            <p>
+                This application uses a custom key-based,
+                position-dependent cipher. Uppercase letters,
+                lowercase letters, and digits are transformed
+                using a deterministic key stream combined with
+                the character's position.
+            </p>
+
+
+            <p>
+                The same plaintext character can therefore
+                produce different ciphertext characters at
+                different positions.
+            </p>
+
+
+            <p>
+                Spaces, punctuation, symbols, emoji, and other
+                unsupported characters remain unchanged and do
+                not advance the cipher position.
+            </p>
+
+
+
+            <!-- ==========================================
+                 Educational Warning
+            =========================================== -->
+
+            <div class="warning">
+
+                <strong>
+                    Educational use only
+                </strong>
+
+
+                <p>
+                    This is an educational custom cipher and is
+                    <strong>
+                        not suitable for protecting sensitive information.
+                    </strong>
+                </p>
+
+            </div>
+
+
+
+            <!-- ==========================================
+                 Privacy
+            =========================================== -->
+
+            <div class="privacy">
+
+                <strong>
+                    Privacy
+                </strong>
+
+
+                <p>
+                    All encryption and decryption happens locally
+                    in your browser. Your text and encryption key
+                    are not uploaded to a server or sent to an API.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             Footer
+        =========================================== -->
+
+        <footer>
+
+            Simple Text Encryptor · Version 3
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         JavaScript
+    =========================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

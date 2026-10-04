@@ -1,0 +1,679 @@
+/* ==========================================
+   Global Reset
+========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ==========================================
+   Root Variables
+========================================== */
+
+:root {
+    --background: #f5f7fb;
+    --card: #ffffff;
+
+    --text: #172033;
+    --muted: #6b7280;
+
+    --border: #d9dee8;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --secondary: #eef1f6;
+    --secondary-hover: #e2e6ee;
+
+    --success: #059669;
+
+    --warning-bg: #fff7ed;
+    --warning-border: #fed7aa;
+
+    --privacy-bg: #eff6ff;
+    --privacy-border: #bfdbfe;
+
+    --version-bg: #f0fdf4;
+    --version-border: #bbf7d0;
+    --version-text: #166534;
+}
+
+
+/* ==========================================
+   Body
+========================================== */
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   Main Container
+========================================== */
+
+.container {
+    width: min(850px, 92%);
+
+    margin: auto;
+
+    padding: 50px 0;
+}
+
+
+/* ==========================================
+   Header
+========================================== */
+
+.header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+/* Version Badge */
+
+.badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    margin-bottom: 12px;
+
+    border-radius: 20px;
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* Title */
+
+.header h1 {
+    font-size: 2.3rem;
+
+    margin-bottom: 10px;
+}
+
+
+/* Subtitle */
+
+.header p {
+    color: var(--muted);
+
+    font-size: 1rem;
+}
+
+
+/* ==========================================
+   Main Application Card
+========================================== */
+
+.app-card {
+    background: var(--card);
+
+    padding: 26px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==========================================
+   General Sections
+========================================== */
+
+.section {
+    margin-bottom: 22px;
+}
+
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 8px;
+}
+
+
+label {
+    font-weight: 600;
+}
+
+
+.section-header span {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   Textareas
+========================================== */
+
+textarea {
+    display: block;
+
+    width: 100%;
+
+    min-height: 190px;
+
+    padding: 14px;
+
+    resize: vertical;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: #fafbfc;
+
+    color: var(--text);
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    outline: none;
+
+    transition:
+        border-color 0.15s,
+        box-shadow 0.15s;
+}
+
+
+textarea:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* ==========================================
+   Encryption Key
+========================================== */
+
+.key-row {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 25px;
+
+    margin-bottom: 18px;
+}
+
+
+.key-control {
+    flex: 1;
+
+    min-width: 220px;
+}
+
+
+.key-control label {
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+
+/* ==========================================
+   Key Input + Show/Hide
+========================================== */
+
+.key-input-wrapper {
+    display: flex;
+
+    width: 100%;
+}
+
+
+#keyInput {
+    flex: 1;
+
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--border);
+
+    border-right: none;
+
+    border-radius: 8px 0 0 8px;
+
+    background: white;
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+#keyInput:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+.toggle-key {
+    padding: 0 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 0 8px 8px 0;
+
+    background: var(--secondary);
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s,
+        border-color 0.15s;
+}
+
+
+.toggle-key:hover {
+    background: var(--secondary-hover);
+}
+
+
+/* ==========================================
+   Key Help
+========================================== */
+
+.key-help {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding-bottom: 2px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    max-width: 280px;
+}
+
+
+.key-help strong {
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   Version Information
+========================================== */
+
+.version-info {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    padding: 10px 13px;
+
+    border: 1px solid var(--version-border);
+
+    border-radius: 8px;
+
+    background: var(--version-bg);
+
+    color: var(--version-text);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+.version-info span:first-child {
+    font-weight: 700;
+}
+
+
+.version-info span:last-child {
+    text-align: right;
+}
+
+
+/* ==========================================
+   Buttons
+========================================== */
+
+.button-group {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+}
+
+
+.button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 11px 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s,
+        transform 0.1s;
+}
+
+
+.button:active {
+    transform: translateY(1px);
+}
+
+
+/* Primary Button */
+
+.button.primary {
+    background: var(--primary);
+
+    color: white;
+}
+
+
+.button.primary:hover {
+    background: var(--primary-hover);
+}
+
+
+/* Secondary Buttons */
+
+.button.secondary {
+    background: var(--secondary);
+
+    color: var(--text);
+}
+
+
+.button.secondary:hover {
+    background: var(--secondary-hover);
+}
+
+
+/* ==========================================
+   Result
+========================================== */
+
+.result-section {
+    margin-bottom: 0;
+}
+
+
+#result {
+    background: #f8fafc;
+}
+
+
+/* ==========================================
+   Copy Button
+========================================== */
+
+.copy-button {
+    margin-top: 10px;
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: var(--success);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.15s;
+}
+
+
+.copy-button:hover {
+    opacity: 0.9;
+}
+
+
+.copy-button:active {
+    transform: translateY(1px);
+}
+
+
+/* ==========================================
+   Information Card
+========================================== */
+
+.info-card {
+    margin-top: 20px;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    background: white;
+
+    line-height: 1.6;
+}
+
+
+.info-card h2 {
+    font-size: 1.1rem;
+
+    margin-bottom: 8px;
+}
+
+
+.info-card > p {
+    color: #4b5563;
+
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   Warning + Privacy
+========================================== */
+
+.warning,
+.privacy {
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+}
+
+
+.warning {
+    background: var(--warning-bg);
+
+    border: 1px solid var(--warning-border);
+
+    color: #92400e;
+}
+
+
+.privacy {
+    background: var(--privacy-bg);
+
+    border: 1px solid var(--privacy-border);
+
+    color: #1e40af;
+}
+
+
+.warning p,
+.privacy p {
+    margin-top: 3px;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   Footer
+========================================== */
+
+footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   Mobile
+========================================== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        padding: 30px 0;
+    }
+
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+
+    .app-card {
+        padding: 18px;
+    }
+
+
+    .key-row {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 12px;
+    }
+
+
+    .key-control {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .key-help {
+        max-width: none;
+    }
+
+
+    .version-info {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+    }
+
+
+    .version-info span:last-child {
+        text-align: left;
+    }
+
+
+    .button-group {
+        flex-direction: column;
+    }
+
+
+    .button {
+        width: 100%;
+    }
+
+
+    textarea {
+        min-height: 160px;
+    }
+
+}
